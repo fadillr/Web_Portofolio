@@ -1,0 +1,415 @@
+ /* Reset some default styles */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     font-family: "Helvetica", sans-serif;
+     background-color: #f7f7f7;
+     color: #333333;
+ }
+
+ /* Header */
+ header {
+     background-color: #1a2930;
+     color: #ffffff;
+     padding: 20px;
+ }
+
+ .navbar {
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+     padding-bottom: 10px;
+ }
+
+ .logo {
+     font-size: 24px;
+     font-weight: bold;
+ }
+
+ .menu {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ }
+
+ .menu li a {
+     text-decoration: none;
+     color: #ffffff;
+     transition: color 0.3s ease-in-out;
+ }
+
+ .menu li a:hover {
+     color: #ff715b;
+ }
+
+ .jumbotron {
+     background-color: #1a2930;
+     color: #ffffff;
+     padding: 40px;
+     text-align: center;
+ }
+
+ .jumbotron h1 {
+     font-size: 36px;
+     margin-bottom: 10px;
+ }
+
+ .jumbotron p {
+     font-size: 18px;
+     color: #ff715b;
+ }
+
+ /* Main Content */
+ main {
+     display: flex;
+     justify-content: space-between;
+     padding: 20px;
+ }
+
+ main h2 {
+     margin-bottom: 20px;
+ }
+
+ /* Styling for Filter */
+ .filter {
+     margin-bottom: 20px;
+ }
+
+ .filter label {
+     margin-right: 10px;
+ }
+
+ .content {
+     flex: 1;
+     padding-right: 20px;
+ }
+
+ .project-cards {
+     display: grid;
+     grid-template-columns: repeat(3, 1fr);
+     gap: 20px;
+ }
+
+ .project-card {
+     background-color: #ffffff;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s ease-in-out;
+ }
+
+ .project-card:hover {
+     transform: translateY(-5px);
+ }
+
+ .project-card img {
+     width: 100%;
+     border-radius: 5px;
+     margin-bottom: 10px;
+ }
+
+ .project-card h3 {
+     font-size: 18px;
+     margin-bottom: 10px;
+ }
+
+ .project-card p {
+     color: #555555;
+     font-size: 14px;
+     margin-bottom: 10px;
+ }
+
+ .tools-used {
+     color: #836096;
+     font-size: 12px;
+ }
+
+ /* Aside */
+ .aside {
+     flex-basis: 30%;
+     background-color: #ffffff;
+     padding: 20px;
+     border-radius: 10px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+ }
+
+ .about-me {
+     margin-bottom: 20px;
+ }
+
+ .about-me h2 {
+     font-size: 20px;
+     margin-bottom: 10px;
+ }
+
+ .about-me img {
+     width: 100%;
+     border-radius: 5px;
+     margin-bottom: 10px;
+ }
+
+ .bio p {
+     font-size: 14px;
+     color: #555555;
+     margin-bottom: 5px;
+ }
+
+ /* Contact Section */
+ .contact {
+     margin-top: 20px;
+     text-align: center;
+ }
+
+ .contact h2 {
+     font-size: 20px;
+     margin-bottom: 10px;
+     text-align: left;
+ }
+
+ .contact label {
+     display: block;
+     margin-bottom: 5px;
+ }
+
+ .contact input[type="text"],
+ .contact input[type="email"],
+ .contact textarea {
+     width: 100%;
+     padding: 10px;
+     margin-bottom: 15px;
+     border: 1px solid #1a2930;
+     border-radius: 5px;
+ }
+
+ .contact button {
+     background-color: #1a2930;
+     color: #ffffff;
+     padding: 10px 20px;
+     border: none;
+     border-radius: 5px;
+     cursor: pointer;
+     transition: background-color 0.3s ease-in-out;
+ }
+
+ .contact button:hover {
+     background-color: #ff715b;
+ }
+
+ /* Style for notification */
+ .notification {
+     display: none;
+     background-color: #5bcf5c;
+     color: white;
+     padding: 10px;
+     border-radius: 5px;
+     text-align: center;
+     margin-top: 10px;
+ }
+
+ /* Footer */
+ footer {
+     background-color: #1a2930;
+     color: #ffffff;
+     text-align: center;
+     padding: 10px;
+ }
+
+ /* Styles for Desktop */
+ @media (min-width: 1024px) {
+     main {
+         flex-direction: row;
+     }
+
+     .menu-toggle {
+         display: none;
+     }
+
+     .content {
+         padding-right: 40px;
+         margin-bottom: 0;
+     }
+
+     /* Style for filter select */
+     .filter select {
+         padding: 8px 12px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         background-color: #f7f7f7;
+         color: #333;
+         font-size: 16px;
+     }
+
+     /* Style for filter label */
+     .filter label {
+         display: block;
+         margin-bottom: 5px;
+         font-size: 16px;
+         color: #555;
+     }
+
+     .aside {
+         flex-basis: 30%;
+     }
+
+     .project-cards {
+         grid-template-columns: repeat(3, 1fr);
+     }
+
+     .content .project-card {
+         display: block;
+     }
+
+     /* Show only the selected category */
+     .content .project-card {
+         display: none;
+     }
+
+     .content .project-card.web {
+         display: block;
+     }
+ }
+
+ /* Styles for Tablet */
+ @media (max-width: 1023px) and (min-width: 768px) {
+     main {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .menu-toggle {
+         display: none;
+     }
+
+     .content {
+         padding-right: 0;
+     }
+
+     /* Style for filter select */
+     .filter select {
+         padding: 8px 12px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         background-color: #f7f7f7;
+         color: #333;
+         font-size: 16px;
+     }
+
+     /* Style for filter label */
+     .filter label {
+         display: block;
+         margin-bottom: 5px;
+         font-size: 16px;
+         color: #555;
+     }
+
+     .project-cards {
+         grid-template-columns: repeat(2, 1fr);
+     }
+
+     .aside {
+         margin-top: 20px;
+         flex-basis: 70%;
+     }
+
+     .contact h2 {
+         text-align: center;
+     }
+
+     .content h2 {
+         text-align: center;
+     }
+
+     .about-me h2 {
+         text-align: center;
+     }
+ }
+
+ /* Styles for Mobile */
+ @media (max-width: 767px) {
+     .navbar {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .logo {
+         margin-bottom: 20px;
+     }
+
+     .menu-toggle {
+         margin-bottom: 10px;
+         cursor: pointer;
+     }
+
+     .menu-toggle i {
+         font-size: 24px;
+         color: white;
+     }
+
+     .menu {
+         display: none;
+         flex-direction: column;
+         align-items: center;
+         gap: 10px;
+     }
+
+     .menu.active {
+         display: block;
+     }
+
+     .jumbotron {
+         padding: 20px;
+     }
+
+     main {
+         flex-direction: column;
+         align-items: center;
+     }
+
+     .content {
+         padding-right: 0;
+         margin-bottom: 20px;
+     }
+
+     /* Style for filter select */
+     .filter select {
+         padding: 10px;
+         border: 1px solid #ccc;
+         border-radius: 5px;
+         background-color: #f7f7f7;
+         color: #333;
+         font-size: 14px;
+     }
+
+     /* Style for filter label */
+     .filter label {
+         display: block;
+         margin-bottom: 5px;
+         font-size: 14px;
+         color: #555;
+     }
+
+     .project-cards {
+         grid-template-columns: 1fr;
+     }
+
+     .aside {
+         margin-top: 20px;
+         flex-basis: 100%;
+     }
+
+     .contact h2 {
+         text-align: center;
+     }
+
+     .content h2 {
+         text-align: center;
+     }
+
+     .about-me h2 {
+         text-align: center;
+     }
+ }
